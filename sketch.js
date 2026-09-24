@@ -96,3 +96,4 @@ function draw() {
   background(220);
   timeORcooldown()
 }
+// 67
