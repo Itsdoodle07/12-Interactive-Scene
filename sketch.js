@@ -8,6 +8,9 @@
 // varibles
 
 
+// testing
+let framechange = 0
+let BIGtest = 1
 // time varibles
 let milseconds = 0
 let seconds = 0
@@ -22,23 +25,31 @@ let death = false
 let evilguydeath = false
 // array's
 
+// Player Img
+let playerImg = []
 
 
-
-function setup() {
+async function setup() {
   //This function get run once at the start of the program
   createCanvas(1300, 800);
   background(240);
   // ellipseMode(CORNER);
   ellipseMode(CENTER);
   rectMode(CENTER);
-
+  imageMode(CENTER);
+playerImg[0] = await loadImage('whoa cool2.png')
+playerImg[1] = await loadImage('whoa cool.png')
+playerImg[2] = await loadImage('whoa front.png')
   //Set the number of frames per second
   frameRate(60);
 }
 // Player model
 function player(x,y){
-
+image(playerImg[framechange],100,500,200,65)
+if(seconds >= BIGtest){
+  framechange =+ 1
+  BIGtest =+ 1
+}
 }
 
 
@@ -56,16 +67,26 @@ function ammo(){
 
 
 // this is like the lives you have and stuff yk yeah :D
-function health(){
+function healthbar(){
 
 }
+
+
+
+
+// this will be our first attack way
+function attack1button1(){
+
+}
+
+
+
+
 
 
 // we will MAYBE use this for like trees and stuff
 function back_lanscape(x,y){
   noStroke()
-  fill('gray')
-rect(x,y,1300,700)
   fill ('black')
 rect(x,y-300,1300,100)
 rect(x,y+450,1300,400)
@@ -94,18 +115,20 @@ frameCount = 0
 
 
   // shows time
-text(milseconds, 50, 50);
-text(seconds,100,50)
-text(minutes,200,50)
+text(milseconds, 50, 100);
+text(seconds,100,100)
+text(minutes,200,100)
 }
 
 
 
 // where we draw stuff
 function draw() {
-  background(220);
-  timeORcooldown()
+  background('gray');
+  
   back_lanscape(650,300)
+  player(200,200)
+  timeORcooldown()
 }
 // key code thing
 function keyPressed() {
