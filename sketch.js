@@ -15,8 +15,10 @@ let BIGtest = 1
 let milseconds = 0
 let seconds = 0
 let minutes = 0
+let secondsTEST = 0
+let milsecondsTEST = 0
 // attacks
-let attack1 = true
+let atack1 = true
 let attack2 = true
 // health
 let health = 100
@@ -46,10 +48,31 @@ playerImg[2] = await loadImage('whoa front.png')
 // Player model
 function player(x,y){
 image(playerImg[framechange],100,500,200,65)
-if(seconds >= BIGtest){
-  framechange =+ 1
-  BIGtest =+ 1
+// for frame chagning
+if(mouseIsPressed === true && secondsTEST == BIGtest){
+  framechange += 1
+  BIGtest += 1
+  
 }
+
+if(framechange == 3){
+  framechange = 0
+}
+// time for changing
+if(mouseIsPressed === true){
+  milsecondsTEST = frameCount
+}
+  if (frameCount == 60){
+frameCount = 0
+  }
+if (milsecondsTEST == 60){
+    milsecondsTEST = 0
+    secondsTEST += 1
+  }
+ 
+  
+   text(milsecondsTEST, 50, 200);
+   text(secondsTEST,100,200);
 }
 
 
@@ -76,7 +99,8 @@ function healthbar(){
 
 // this will be our first attack way
 function attack1button1(){
-
+  fill('red')
+rect(100,570,50,50)
 }
 
 
@@ -125,8 +149,8 @@ text(minutes,200,100)
 // where we draw stuff
 function draw() {
   background('gray');
-  
   back_lanscape(650,300)
+  attack1button1()
   player(200,200)
   timeORcooldown()
 }
