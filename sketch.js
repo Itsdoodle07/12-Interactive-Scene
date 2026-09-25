@@ -100,7 +100,7 @@ function healthbar(){
 // this will be our first attack way
 function attack1button1(){
   fill('red')
-rect(100,570,50,50)
+rect(100,675,100,200)
 }
 
 
@@ -127,9 +127,9 @@ function timeORcooldown(){
 frameCount = 0
   }
   // resets milseconds
-  if (milseconds == 60){
-    milseconds = 0
+  if (milseconds <= 60){
     seconds += 1
+    milseconds = 0
   }
   // resets seconds
   if (seconds == 60){
@@ -139,9 +139,8 @@ frameCount = 0
 
 
   // shows time
-text(milseconds, 50, 100);
-text(seconds,100,100)
-text(minutes,200,100)
+text(seconds,50,100)
+text(minutes,100,100)
 }
 
 
