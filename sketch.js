@@ -157,3 +157,6 @@ function draw() {
 function keyPressed() {
   console.log(keyCode)
 }
+if(keyCode == 32){
+  true == true
+}
