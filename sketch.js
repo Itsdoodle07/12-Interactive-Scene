@@ -25,6 +25,8 @@ let health = 100
 // kill
 let death = false
 let evilguydeath = false
+// turn
+let turnPlayer = true
 // array's
 
 // Player Img
@@ -33,7 +35,7 @@ let playerImg = []
 
 async function setup() {
   //This function get run once at the start of the program
-  createCanvas(1300, 800);
+  createCanvas(800, 800);
   background(240);
   // ellipseMode(CORNER);
   ellipseMode(CENTER);
@@ -91,7 +93,7 @@ function ammo(){
 
 // this is like the lives you have and stuff yk yeah :D
 function healthbar(){
-
+rect(100,100,100,20)
 }
 
 
@@ -101,6 +103,9 @@ function healthbar(){
 function attack1button1(){
   fill('red')
 rect(100,675,100,200)
+if(mouseX >= 50 && mouseX <= 150 && mouseIsPressed == true && turnPlayer == true){
+  ellipse(400,400,100,100)
+}
 }
 
 
@@ -112,8 +117,8 @@ rect(100,675,100,200)
 function back_lanscape(x,y){
   noStroke()
   fill ('black')
-rect(x,y-300,1300,100)
-rect(x,y+450,1300,400)
+rect(x,y-300,800,100)
+rect(x,y+450,800,400)
 }
 
 
@@ -148,15 +153,14 @@ text(minutes,100,100)
 // where we draw stuff
 function draw() {
   background('gray');
-  back_lanscape(650,300)
+  back_lanscape(400,300)
   attack1button1()
   player(200,200)
+  healthbar()
+
   timeORcooldown()
 }
 // key code thing
 function keyPressed() {
   console.log(keyCode)
-}
-if(keyCode == 32){
-  true == true
 }
