@@ -41,6 +41,7 @@ async function setup() {
   ellipseMode(CENTER);
   rectMode(CENTER);
   imageMode(CENTER);
+  // player array
 playerImg[0] = await loadImage('whoa cool2.png')
 playerImg[1] = await loadImage('whoa cool.png')
 playerImg[2] = await loadImage('whoa front.png')
@@ -93,8 +94,8 @@ function ammo(){
 
 // this is like the lives you have and stuff yk yeah :D
 function healthbar(){
-   fill('black')
-rect(100,100,100,20)
+   fill(200)
+rect(300,100,100,20)
 }
 
 
