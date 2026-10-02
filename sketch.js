@@ -93,6 +93,7 @@ function ammo(){
 
 // this is like the lives you have and stuff yk yeah :D
 function healthbar(){
+   fill('black')
 rect(100,100,100,20)
 }
 
@@ -104,6 +105,7 @@ function attack1button1(){
   fill('red')
 rect(100,675,100,200)
 if(mouseX >= 50 && mouseX <= 150 && mouseIsPressed == true && turnPlayer == true){
+ 
   ellipse(400,400,100,100)
 }
 }
