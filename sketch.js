@@ -32,7 +32,7 @@ let turnPlayer = true
 // Player Img
 let playerImg = []
 
-
+// poo
 async function setup() {
   //This function get run once at the start of the program
   createCanvas(800, 800);
