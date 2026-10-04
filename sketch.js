@@ -103,9 +103,9 @@ rect(300,100,100,20)
 
 // this will be our first attack way
 function attack1button1(){
-  fill('red')
-rect(100,675,100,200)
 while(turnPlayer == true){
+fill('red')
+rect(100,675,100,200)
 if(mouseX >= 50 && mouseX <= 150 && mouseIsPressed == true && turnPlayer == true){
   ellipse(400,400,100,100)
 }
