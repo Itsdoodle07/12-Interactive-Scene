@@ -171,7 +171,7 @@ if(framchangeevilguy == 11){
 }
 if(hitormissevil >= 6){
 health -= 10
-fill("blue")
+fill("red")
 rect(400,400,800,800)
 hitormissevil = 0
 }
