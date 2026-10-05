@@ -20,6 +20,7 @@ let milsecondsTEST = 0
 // attacks
 let atack1 = true
 let attack2 = true
+let attacktime = 0
 // health
 let health = 100
 // kill
@@ -27,12 +28,13 @@ let death = false
 let evilguydeath = false
 // turn
 let turnPlayer = true
+let turnevilguy = false
 // array's
 
 // Player Img
 let playerImg = []
+let playerAttack1button
 
-// poo
 async function setup() {
   //This function get run once at the start of the program
   createCanvas(800, 800);
@@ -45,13 +47,15 @@ async function setup() {
 playerImg[0] = await loadImage('whoa cool2.png')
 playerImg[1] = await loadImage('whoa cool.png')
 playerImg[2] = await loadImage('whoa front.png')
+// button img
+playerAttack1button = await loadImage('attackcard1.png')
   //Set the number of frames per second
   frameRate(60);
 }
 // Player model
 function player(x,y){
 image(playerImg[framechange],100,500,200,65)
-// for frame chagning
+// for frame changing
 if(mouseIsPressed === true && secondsTEST == BIGtest){
   framechange += 1
   BIGtest += 1
@@ -84,7 +88,13 @@ if (milsecondsTEST == 60){
 function evil_guys(x,y){
 
 }
+// evil guy attack
 
+
+function attackevil(){
+    fill(0,200,0)
+    rect(300,300,50,50)
+}
 
 // ammo count 
 function ammo(){
@@ -103,12 +113,13 @@ rect(300,100,100,20)
 
 // this will be our first attack way
 function attack1button1(){
-while(turnPlayer == true){
-fill('red')
-rect(100,675,100,200)
-if(mouseX >= 50 && mouseX <= 150 && mouseIsPressed == true && turnPlayer == true){
-  ellipse(400,400,100,100)
+image(playerAttack1button,100,675,150,200)
+if(mouseX >= 25 && mouseX <= 175 && mouseIsPressed == true && turnPlayer == true){
 }
+if (attacktime == 20){
+  attacktime = 0
+  turnevilguy = true
+   turnPlayer = false
 }
 }
 
