@@ -55,31 +55,6 @@ playerAttack1button = await loadImage('attackcard1.png')
 // Player model
 function player(x,y){
 image(playerImg[framechange],100,500,200,65)
-// for frame changing
-if(mouseIsPressed === true && secondsTEST == BIGtest){
-  framechange += 1
-  BIGtest += 1
-  
-}
-
-if(framechange == 3){
-  framechange = 0
-}
-// time for changing
-if(mouseIsPressed === true){
-  milsecondsTEST = frameCount
-}
-  if (frameCount == 60){
-frameCount = 0
-  }
-if (milsecondsTEST == 60){
-    milsecondsTEST = 0
-    secondsTEST += 1
-  }
- 
-  
-   text(milsecondsTEST, 50, 200);
-   text(secondsTEST,100,200);
 }
 
 
@@ -115,6 +90,8 @@ rect(300,100,100,20)
 function attack1button1(){
 image(playerAttack1button,100,675,150,200)
 if(mouseX >= 25 && mouseX <= 175 && mouseIsPressed == true && turnPlayer == true){
+  ellipse(300,300,50,50)
+  attacktime += 1
 }
 if (attacktime == 20){
   attacktime = 0
@@ -135,36 +112,6 @@ function back_lanscape(x,y){
 rect(x,y-300,800,100)
 rect(x,y+450,800,400)
 }
-
-
-// this is will be our cooldown for weapons and or timed events
-function timeORcooldown(){
-  // will we use this for time
-
-  // base for time
-  milseconds = frameCount
-  if (frameCount == 60){
-frameCount = 0
-  }
-  // resets milseconds
-  if (milseconds <= 60){
-    seconds += 1
-    milseconds = 0
-  }
-  // resets seconds
-  if (seconds == 60){
-    seconds = 0
-    minutes += 1
-  }
-
-
-  // shows time
-text(seconds,50,100)
-text(minutes,100,100)
-}
-
-
-
 // where we draw stuff
 function draw() {
   background('gray');
@@ -173,7 +120,6 @@ function draw() {
   player(200,200)
   healthbar()
 
-  timeORcooldown()
 }
 // key code thing
 function keyPressed() {
