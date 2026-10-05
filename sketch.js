@@ -104,7 +104,7 @@ evilguyImg[11] = await loadImage('evilguy shooting8.png')
 
 
   //Set the number of frames per second
-  frameRate(60);
+  frameRate(15);
 }
 // Player model
 function player(){
